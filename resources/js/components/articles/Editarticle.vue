@@ -1,11 +1,9 @@
 <template>
-  <button type="button" class="btn btn-warning rounded-circle " @click="visible= true">
-  <span style="color: rgb(233, 240, 241)">
-  <i class="fa-solid fa-pen-to-square"></i>
-  </span>
+
+  <button class="btn btn-outline-primary mx-2" @click="visible= true">
+   <i class="fa-solid fa-pen-to-square"></i>
+  Edit
   </button>
-  <form >
-  <div class="card flex justify-content-center">
   <Dialog
   v-model:visible="visible"  >
   <div class="row">
@@ -50,8 +48,7 @@ accepted-file-types="image/jpeg, image/png" v-bind:files="myFiles" v-on:init="ha
 </button>
 
 </Dialog>
-</div>
-</form>
+
 </template>
 <script setup>
 import api from '../config/api.js';

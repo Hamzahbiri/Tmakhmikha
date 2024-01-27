@@ -3,35 +3,10 @@
         <div v-if="isLoading">
             <h2>Loading ....</h2>
         </div>
-        <div v-else class="py-6">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-                <div class="container-flex">
-                    <router-link
-                        :to="{ name: 'Addarticle' }"
-                        class="btn btn-outline-light ms-4"
-                    >
-                        <i class="fa-solid fa-square-plus"></i>New
-                        Article</router-link
-                    >
-
-                    <router-link
-                        :to="{ name: 'Addcategorie' }"
-                        class="btn btn-outline-light ms-4"
-                    >
-                        <i class="fa-solid fa-square-plus"></i> New
-                        Categorie</router-link
-                    >
-
-                    <router-link
-                        :to="{ name: 'Addarticle' }"
-                        class="btn btn-outline-light ms-4"
-                    >
-                        <i class="fa-solid fa-square-plus"></i> New
-                        Command</router-link
-                    >
-                </div>
-            </nav>
-            <table class="table table-striped table-dark shadow">
+        <div v-else >
+          <div class="bg-dark"><Navbar/></div>
+           <Options/>
+            <table class="table table-striped table-dark shadow-lg">
                 <thead>
                     <tr>
                         <th scope="col">Image</th>
@@ -54,13 +29,15 @@
                         <td>{{ getCategoryName(art.categorieID) }}</td>
                         <td>{{ art.prix }}</td>
                         <td>
+                      
+                          
                             <Editarticle :art="art" />
+                        
                         </td>
                         <td>
                             <button
                                 class="btn btn-outline-danger mx-2"
-                                @click="deletearticle(art.id)"
-                            >
+                                @click="deletearticle(art.id)"                            >
                                 <i class="fa-solid fa-trash-can"></i>
                                 Delete
                             </button>
@@ -73,8 +50,10 @@
 </template>
 
 <script setup>
-import api from "../config/api.js";
-import Column from "primevue/column";
+import api from "../config/api.js"; 
+import Navbar from "../Navbar.vue";
+import Options from "../Options.vue";
+
 import Editarticle from "./Editarticle.vue";
 import { ref, onMounted } from "vue";
 import axios from "axios";
@@ -123,4 +102,8 @@ const getCategoryName = (categorieID) => {
     return category ? category.nomcategorie : "";
 };
 </script>
-<style lang="scss" scoped></style>
+<style scoped>
+
+
+
+</style>

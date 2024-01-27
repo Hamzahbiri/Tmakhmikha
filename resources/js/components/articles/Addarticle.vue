@@ -1,7 +1,8 @@
 <template>
-    <div class="col-md-6 offset-md-3 mt-4">
-      <div class="card shadow">
-        <div class="card-header bg-primary text-white">
+
+    <div class="col-md-6 offset-md-3 mt-4 crdsz">
+      <div class="card  shadow">
+        <div class="card-header text-white">
           <h4 class="card-title text-center m-0">Ajout Article</h4>
         </div>
         <div class="card-body">
@@ -39,6 +40,9 @@
             </div>
   
             <div class="text-center">
+              <button>
+                
+              </button>
               <button type="submit" class="btn btn-success">
                 <i class="fa-solid fa-floppy-disk"></i> Enregistrer
               </button>
@@ -50,6 +54,7 @@
         </div>
       </div>
     </div>
+
   </template>
   
 <script setup>
@@ -107,4 +112,11 @@ onMounted(fetchCategories);
 </script>
 
 <style scoped>
+.card-header{
+  background-color: rgba(0, 0, 0, 0.888);
+}
+body{
+  background-color: blue;
+}
+
 </style>
