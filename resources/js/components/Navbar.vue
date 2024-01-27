@@ -24,14 +24,44 @@
           <i class="fa-solid fa-cogs me-2"></i>Administration
         </router-link>
   
-        <router-link :to="{name:''}" class="btn btn-outline-light ms-4 fw-bold">
-          <i class="fa-solid fa-user me-2"></i>Login / Sign Up
-        </router-link>
+        <router-link :to="{ name: 'Login' }" class="btn btn-outline-light ms-4 fw-bold">
+                <i class="fa-solid fa-user me-2"></i>
+                Login
+            </router-link>
+
+            <button @click="logout">Logout</button>
       </div>
     </nav>
            
 
   </template>
+
+  <script setup>
+import axios from 'axios';
+import { useRouter } from 'vue-router';
+const router = useRouter();
+const logout = async () => {
+    let token = ""
+
+    token = localStorage.getItem('token')
+    console.log(token)
+    axios.post('http://localhost:8000/api/logout', null, {
+
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+
+        .then((response) => {
+            console.log(response)
+            localStorage.removeItem('token')
+            localStorage.removeItem('user')
+            router.push("/login")
+        })
+        .catch(err => { console.log(err); alert(err) })
+
+}
+</script>
   <style scoped>
  
 </style>

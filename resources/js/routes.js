@@ -7,6 +7,8 @@ import AboutUS from "./components/AboutUs.vue";
 import Menu from "./components/Menu.vue";
 import Hero from "./components/Hero.vue";
 import Options from "./components/Options.vue";
+import Login from "./components/authentification/Login.vue"
+import Register from "./components/authentification/Register.vue"
 export const routes = [
 
 {
@@ -35,7 +37,15 @@ export const routes = [
 {
     name:"Viewarticles",
     path:"/administration",
-    component:Viewarticles
+    component:Viewarticles,
+    meta:{
+        isAuth:true
+    }
+},
+{
+    name:"AboutUS",
+    path:"/AboutUS",
+    component:AboutUS
 },
 {
     name:"AboutUS",
@@ -58,7 +68,17 @@ export const routes = [
     name:"Addcategorie",
     path:"/addcategorie",
     component:Addcategorie
-}
+},
+{
+    name:"Login",
+    path:"/login",
+    component:Login
+},
+{
+    name:"Register",
+    path:"/register",
+    component:Register
+},
 
 
 ];
