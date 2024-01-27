@@ -45,7 +45,6 @@ if (localStorage.getItem('token'))
   isAuthenticated = true; 
 }
 
-console.log(localStorage.getItem('token'))
 const logout = async () => {
   let token = localStorage.getItem('token');
 

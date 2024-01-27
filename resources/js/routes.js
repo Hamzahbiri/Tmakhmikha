@@ -9,6 +9,7 @@ import Hero from "./components/Hero.vue";
 import Options from "./components/Options.vue";
 import Login from "./components/authentification/Login.vue"
 import Register from "./components/authentification/Register.vue"
+import ViewOrders from "./components/admin/ViewOrders.vue"
 export const routes = [
 
 {
@@ -78,6 +79,11 @@ export const routes = [
     name:"Register",
     path:"/register",
     component:Register
+},
+{
+    name:"ViewOrders",
+    path:"/orders",
+    component:ViewOrders
 },
 
 

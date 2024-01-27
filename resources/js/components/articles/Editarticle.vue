@@ -84,7 +84,6 @@ options: { type: 'local' }
 }
 }
 const loadarticle=()=>{
-console.log(props.art)
 article.value=props.art
 }
 onMounted(() => {
@@ -124,7 +123,6 @@ const data = new FormData();
   axios.post('https://api.cloudinary.com/v1_1/dwvs0ycjd/upload',data)
 .then((response) => response.data)
 .then((data) => {
-console.log(data);
 article.value.imageart = data.url;
 load(data);
 })

@@ -1,6 +1,13 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
     <div class="container-flex">
+
+        <router-link
+            :to="{ name: 'Viewarticles' }"
+            class="btn btn-outline-light ms-4"
+        >
+            <i class="fa-solid fa-square-plus"></i>View Articles</router-link
+        >
         <router-link
             :to="{ name: 'Addarticle' }"
             class="btn btn-outline-light ms-4"
@@ -18,7 +25,13 @@
         >
 
         <router-link
-            :to="{ name: 'Addarticle' }"
+            :to="{ name: 'ViewOrders' }"
+            class="btn btn-outline-light ms-4"
+        >
+            <i class="fa-solid fa-square-plus"></i>View Comande</router-link
+        >
+        <router-link
+            :to="{ name: '' }"
             class="btn btn-outline-light ms-4"
         >
             <i class="fa-solid fa-square-plus"></i> New

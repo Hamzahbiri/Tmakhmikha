@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -35,5 +38,18 @@ Route::middleware('api')->group(function () {
 
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/register', [RegisterController::class, 'register']);
+
 Route::middleware('auth:sanctum')->post('/logout', [LoginController::class,
 'logout']);
+
+
+Route::middleware('api')->group(function () {
+    Route::resource('orders', OrderController::class);
+});
+
+Route::middleware('api')->group(function () {
+    Route::resource('orderItems', OrderItemController::class);
+});
+Route::middleware('api')->group(function () {
+    Route::resource('users', UserController::class);
+});

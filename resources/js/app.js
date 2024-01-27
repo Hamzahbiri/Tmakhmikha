@@ -27,7 +27,6 @@ router.beforeEach(async (to, from, next) => {
         if (!token) {
             next("/login");
         } else {
-            console.log(token);
             next();
         }
     } else {
