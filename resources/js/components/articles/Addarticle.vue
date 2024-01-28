@@ -40,9 +40,6 @@
             </div>
   
             <div class="text-center">
-              <button>
-                
-              </button>
               <button type="submit" class="btn btn-success">
                 <i class="fa-solid fa-floppy-disk"></i> Enregistrer
               </button>

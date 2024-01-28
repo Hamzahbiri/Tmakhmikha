@@ -46,7 +46,7 @@ if (localStorage.getItem('token'))
 }
 
 const logout = async () => {
-  let token = localStorage.getItem('token');
+    let token = localStorage.getItem('token');
 
   axios
     .post('http://localhost:8000/api/logout', null, {

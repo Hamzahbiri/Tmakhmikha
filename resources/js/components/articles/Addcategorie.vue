@@ -1,7 +1,7 @@
 <template>
     <div class="col-md-6 offset-md-3 mt-4">
       <div class="card shadow">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bg-dark text-white">
           <h4 class="card-title text-center m-0">Ajout Categorie</h4>
         </div>
         <div class="card-body">
