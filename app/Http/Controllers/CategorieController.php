@@ -47,13 +47,18 @@ class CategorieController extends Controller
         return response()->json($categorie, 200);   
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Categorie $id)
-    {
-        $categorie = Categorie::find($id);
-        $categorie->delete();
-        return response()->json('Catégorie supprimée !');
+
+    public function destroy($id)
+{
+    $categorie = Categorie::find($id);
+    
+    if (!$categorie) {
+        return response()->json(['message' => 'Category not found'], 404);
     }
+
+    $categorie->delete();
+    
+    return response()->json('Catégorie supprimée !');
+}
+
 }
